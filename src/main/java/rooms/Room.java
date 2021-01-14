@@ -1,19 +1,19 @@
 package rooms;
 
 import enemies.Enemy;
-import items.Treasures;
+import items.Treasure;
 
 public class Room {
 
-    private Treasures treasure;
+    private Treasure treasure;
     private Enemy enemy;
 
-    public Room (Treasures treasure, Enemy enemy) {
+    public Room (Treasure treasure, Enemy enemy) {
         this.treasure = treasure;
         this.enemy = enemy;
     }
 
-    public Treasures getTreasure() {
+    public Treasure getTreasure() {
         return treasure;
     }
 

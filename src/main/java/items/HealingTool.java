@@ -1,10 +1,10 @@
 package items;
 
-public class HealingTools extends ItemType {
+public class HealingTool extends ItemType {
 
     private int healthPoints;
 
-    public HealingTools(String name, int healthPoints){
+    public HealingTool(String name, int healthPoints){
         super(name);
         this.healthPoints = healthPoints;
     }

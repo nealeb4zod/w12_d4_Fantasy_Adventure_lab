@@ -1,6 +1,6 @@
 package playersTest.fightersTest;
 
-import player.fighter.Barbarians;
+import player.fighter.Barbarian;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -8,11 +8,11 @@ import static org.junit.Assert.assertEquals;
 
 public class BarbarianTest {
 
-    Barbarians conan;
+    Barbarian conan;
 
     @Before
     public void before(){
-        conan = new Barbarians("Conan", 100);
+        conan = new Barbarian("Conan", 100);
     }
 
     @Test

@@ -1,7 +1,7 @@
 package playersTest.fightersTest;
 
 import enemies.Enemy;
-import player.fighter.Dwarves;
+import player.fighter.Dwarf;
 import items.Weapons;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,11 +12,11 @@ import static org.junit.Assert.assertEquals;
 public class DwarfTest {
 
     Weapons weapons;
-    Dwarves thorin;
+    Dwarf thorin;
     Enemy orc;
 
     @Before
-    public void before(){ thorin = new Dwarves("Thorin", 200);
+    public void before(){ thorin = new Dwarf("Thorin", 200);
     orc = new Enemy("Orky", 50, 100);
     weapons = new Weapons("Sword", 60);
     }
@@ -33,7 +33,7 @@ public class DwarfTest {
 
     @Test
     public void canUseWeapon(){
-        thorin.changeWeapons(weapons);
+        thorin.changeItem(weapons);
         thorin.attack(thorin.getEquippedWeapon(), orc);
         assertEquals(40, orc.getHealthPoints());
     }

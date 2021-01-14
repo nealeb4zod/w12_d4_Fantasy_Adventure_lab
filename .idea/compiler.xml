@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="w12_d4_Fantasy_Adventure_lab" />
         <module name="w12_d4_Fantasy_Adventure" />
       </profile>
     </annotationProcessing>

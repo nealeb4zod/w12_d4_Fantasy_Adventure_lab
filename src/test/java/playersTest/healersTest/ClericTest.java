@@ -1,18 +1,18 @@
 package playersTest.healersTest;
 
-import player.healer.Clerics;
+import player.healer.Cleric;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class ClericsTest {
+public class ClericTest {
 
-        Clerics healer;
+        Cleric healer;
 
         @Before
         public void before() {
-                healer = new Clerics("Priest", 80);
+                healer = new Cleric("Priest", 80);
 
         }
 

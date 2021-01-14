@@ -1,10 +1,10 @@
 package items;
 
-public class Spells extends ItemType {
+public class Spell extends ItemType {
 
     private int damage;
 
-    public Spells(String name, int damage){
+    public Spell(String name, int damage){
         super(name);
         this.damage = damage;
     }

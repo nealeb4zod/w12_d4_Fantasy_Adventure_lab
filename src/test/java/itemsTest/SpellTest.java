@@ -1,25 +1,25 @@
 package itemsTest;
 
-import items.Spells;
+import items.Spell;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class SpellsTest {
+public class SpellTest {
 
-    Spells spells;
+    Spell spell;
 
     @Before
-    public void before(){ spells = new Spells("Leviosa", 10); }
+    public void before(){ spell = new Spell("Leviosa", 10); }
 
     @Test
     public void canGetDamage(){
-        assertEquals(10, spells.getDamage());
+        assertEquals(10, spell.getDamage());
     }
 
     @Test
     public void canGetName(){
-        assertEquals("Leviosa", spells.getName());
+        assertEquals("Leviosa", spell.getName());
     }
 }

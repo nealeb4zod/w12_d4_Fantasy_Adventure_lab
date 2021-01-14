@@ -2,16 +2,16 @@ package playersTest.magicUsersTest;
 
 import org.junit.Before;
 import org.junit.Test;
-import player.magicUser.Wizards;
+import player.magicUser.Wizard;
 
 import static org.junit.Assert.assertEquals;
 
-public class WizardsTest {
+public class WizardTest {
 
-    Wizards merlin;
+    Wizard merlin;
 
     @Before
-    public void before(){ merlin = new Wizards("Merlin", 85); }
+    public void before(){ merlin = new Wizard("Merlin", 85); }
 
     @Test
     public void canGetName(){

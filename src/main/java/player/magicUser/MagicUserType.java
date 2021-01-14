@@ -1,13 +1,13 @@
 package player.magicUser;
 
 import enemies.Enemy;
-import items.Creatures;
-import items.Spells;
+import items.Creature;
+import items.Spell;
 
 public abstract class MagicUserType extends player.Player {
 
-    private Spells equippedSpell;
-    private Creatures equippedCreature;
+    private Spell equippedSpell;
+    private Creature equippedCreature;
 
     public MagicUserType(String name, int healthPoints) {
         super(name, healthPoints);
@@ -15,19 +15,19 @@ public abstract class MagicUserType extends player.Player {
         this.equippedCreature = null;
     }
 
-    public Spells getEquippedSpell() {
+    public Spell getEquippedSpell() {
         return equippedSpell;
     }
 
-    public Creatures getEquippedCreature() {
+    public Creature getEquippedCreature() {
         return equippedCreature;
     }
 
-    public void castSpell(Spells spell, Enemy enemy) {
+    public void castSpell(Spell spell, Enemy enemy) {
         enemy.takeDamage(spell.getDamage());
     }
 
-    public void changeSpells(Spells newSpell) {
+    public void changeSpells(Spell newSpell) {
         if (equippedSpell != null) {
             addToInventory(equippedSpell);
         }
@@ -37,7 +37,7 @@ public abstract class MagicUserType extends player.Player {
         }
     }
 
-    public void changeCreature(Creatures newCreature) {
+    public void changeCreature(Creature newCreature) {
         if (equippedCreature != null) {
             addToInventory(equippedCreature);
         }

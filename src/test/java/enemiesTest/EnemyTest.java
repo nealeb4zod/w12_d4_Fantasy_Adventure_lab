@@ -3,7 +3,7 @@ package enemiesTest;
 import enemies.Enemy;
 import org.junit.Before;
 import org.junit.Test;
-import player.fighter.Barbarians;
+import player.fighter.Barbarian;
 
 import static org.junit.Assert.assertEquals;
 
@@ -11,12 +11,12 @@ import static org.junit.Assert.assertEquals;
 public class EnemyTest {
 
     Enemy orc;
-    Barbarians conan;
+    Barbarian conan;
 
     @Before
     public void before() {
         orc = new Enemy("Orcy", 5, 15);
-        conan = new Barbarians("Conan", 25);
+        conan = new Barbarian("Conan", 25);
     }
 
     @Test

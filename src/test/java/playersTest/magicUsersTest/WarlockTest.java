@@ -1,25 +1,25 @@
 package playersTest.magicUsersTest;
 
 import enemies.Enemy;
-import items.Spells;
+import items.Spell;
 import org.junit.Before;
 import org.junit.Test;
-import player.magicUser.Warlocks;
+import player.magicUser.Warlock;
 
 import static org.junit.Assert.assertEquals;
 
 
-public class WarlocksTest {
+public class WarlockTest {
 
-    Warlocks voldy;
+    Warlock voldy;
     Enemy orc;
-    Spells leviosa;
+    Spell leviosa;
 
     @Before
     public void before() {
-        voldy = new Warlocks("Voldemort", 3000);
+        voldy = new Warlock("Voldemort", 3000);
         orc = new Enemy("Orky", 50, 100);
-        leviosa = new Spells("Leviosa", 10);
+        leviosa = new Spell("Leviosa", 10);
     }
 
     @Test

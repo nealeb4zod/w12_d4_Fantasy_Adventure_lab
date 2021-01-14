@@ -1,22 +1,22 @@
 package itemsTest;
 
-import items.HealingTools;
+import items.HealingTool;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class HealingToolsTest {
+public class HealingToolTest {
 
-    HealingTools healingTools;
+    HealingTool healingTool;
 
     @Before
     public void before(){
-        healingTools = new HealingTools("test", 20);
+        healingTool = new HealingTool("test", 20);
     }
 
     @Test
     public void canHaveHealthPoints(){
-        assertEquals(20, healingTools.getHealthPoints());
+        assertEquals(20, healingTool.getHealthPoints());
     }
 }

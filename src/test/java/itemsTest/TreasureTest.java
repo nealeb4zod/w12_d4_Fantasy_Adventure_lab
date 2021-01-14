@@ -1,6 +1,6 @@
 package itemsTest;
 
-import items.Treasures;
+import items.Treasure;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -8,13 +8,13 @@ import static org.junit.Assert.assertEquals;
 
 
 
-public class TreasuresTest {
+public class TreasureTest {
 
-    Treasures myPrecious;
+    Treasure myPrecious;
 
     @Before
 
-    public void before(){ myPrecious = new Treasures("My Precious", 1000); }
+    public void before(){ myPrecious = new Treasure("My Precious", 1000); }
 
     @Test
     public void canGetDefence(){

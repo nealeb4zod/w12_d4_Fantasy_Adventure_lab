@@ -1,28 +1,29 @@
 package itemsTest;
 
-import items.Creatures;
+import items.Creature;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class CreaturesTest {
 
-    Creatures creatures;
+public class CreatureTest {
+
+    Creature creature;
 
     @Before
     public void before(){
-        creatures = new Creatures("Iglu", 80);
+        creature = new Creature("Iglu", 80);
     }
 
     @Test
     public void canGetCreatureName(){
-        assertEquals("Iglu", creatures.getName());
+        assertEquals("Iglu", creature.getName());
     }
 
     @Test
     public void canGetCreatureDefence(){
-        assertEquals(80, creatures.getDefence());
+        assertEquals(80, creature.getDefence());
     }
 
 

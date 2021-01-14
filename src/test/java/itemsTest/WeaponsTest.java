@@ -1,6 +1,5 @@
 package itemsTest;
 
-import items.Creatures;
 import items.Weapons;
 import org.junit.Before;
 import org.junit.Test;

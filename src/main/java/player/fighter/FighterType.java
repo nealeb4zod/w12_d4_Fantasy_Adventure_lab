@@ -1,9 +1,10 @@
 package player.fighter;
 
 import enemies.Enemy;
+import interfaces.ISwap;
 import items.Weapons;
 
-public abstract class FighterType extends player.Player {
+public abstract class FighterType extends player.Player implements ISwap {
 
     private Weapons equippedWeapon;
 
@@ -18,7 +19,7 @@ public abstract class FighterType extends player.Player {
 
     }
 
-    public void changeWeapons( Weapons newWeapons) {
+    public void changeItem(Weapons newWeapons) {
         if (equippedWeapon != null){
             addToInventory(equippedWeapon);
         }
