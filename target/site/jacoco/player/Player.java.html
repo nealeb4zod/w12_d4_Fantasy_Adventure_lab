@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Player.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">w12_d4_Fantasy_Adventure</a> &gt; <a href="index.source.html" class="el_package">player</a> &gt; <span class="el_source">Player.java</span></div><h1>Player.java</h1><pre class="source lang-java linenums">package player;
+
+import items.Item;
+import items.Treasure;
+
+import java.util.ArrayList;
+
+public abstract class Player {
+
+    private final String name;
+    private final int maxHealthPoints;
+    private int healthPoints;
+    private ArrayList&lt;Item&gt; inventory;
+    private ArrayList&lt;Treasure&gt; purse;
+    private boolean alive;
+
+<span class="fc" id="L17">    public Player(String name, int healthPoints) {</span>
+<span class="fc" id="L18">        this.name = name;</span>
+<span class="fc" id="L19">        this.maxHealthPoints = healthPoints;</span>
+<span class="fc" id="L20">        this.healthPoints = healthPoints;</span>
+<span class="fc" id="L21">        this.inventory = new ArrayList&lt;Item&gt;();</span>
+<span class="fc" id="L22">        this.purse = new ArrayList&lt;Treasure&gt;();</span>
+<span class="fc" id="L23">        this.alive = true;</span>
+<span class="fc" id="L24">    }</span>
+
+    public String getName() {
+<span class="fc" id="L27">        return name;</span>
+    }
+
+    public int getHealthPoints() {
+<span class="fc" id="L31">        return healthPoints;</span>
+    }
+
+    public ArrayList&lt;Item&gt; getInventory() {
+<span class="fc" id="L35">        return inventory;</span>
+    }
+
+    public void addToInventory(Item item) {
+<span class="fc" id="L39">        inventory.add(item);</span>
+<span class="fc" id="L40">    }</span>
+
+    public void removeFromInventory(Item item) {
+<span class="fc" id="L43">        inventory.remove(item);</span>
+<span class="fc" id="L44">    }</span>
+
+    public ArrayList&lt;Treasure&gt; getPurse() {
+<span class="nc" id="L47">        return purse;</span>
+    }
+
+    public void addToPurse(Treasure treasure) {
+<span class="nc" id="L51">        purse.add(treasure);</span>
+<span class="nc" id="L52">    }</span>
+
+    public void removeFromPurse(Treasure treasure) {
+<span class="nc" id="L55">        purse.remove(treasure);</span>
+<span class="nc" id="L56">    }</span>
+
+    public void takeDamage(int damageAmount) {
+<span class="fc bfc" id="L59" title="All 2 branches covered.">        if (getHealthPoints() &gt; damageAmount) {</span>
+<span class="fc" id="L60">            this.healthPoints -= damageAmount;</span>
+        } else {
+<span class="fc" id="L62">            this.healthPoints = 0;</span>
+<span class="fc" id="L63">            this.alive = false;</span>
+        }
+<span class="fc" id="L65">    }</span>
+
+    public int getMaxHealthPoints() {
+<span class="fc" id="L68">        return maxHealthPoints;</span>
+    }
+
+    public void heal(int pointsToHeal) {
+<span class="fc bfc" id="L72" title="All 2 branches covered.">        if ((healthPoints + pointsToHeal) &gt; getMaxHealthPoints()) {</span>
+<span class="fc" id="L73">            healthPoints = getMaxHealthPoints();</span>
+        }
+        else {
+<span class="fc" id="L76">            healthPoints += pointsToHeal;</span>
+        }
+<span class="fc" id="L78">    }</span>
+
+    public boolean isAlive() {
+<span class="nc" id="L81">        return alive;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

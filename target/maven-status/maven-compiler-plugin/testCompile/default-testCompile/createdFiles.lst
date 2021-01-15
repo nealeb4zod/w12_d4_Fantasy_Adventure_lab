@@ -1,0 +1,12 @@
+playersTest/magicUsersTest/WarlockTest.class
+playersTest/fightersTest/DwarfTest.class
+playersTest/fightersTest/KnightTest.class
+itemsTest/WeaponTest.class
+itemsTest/TreasureTest.class
+itemsTest/HealingToolTest.class
+playersTest/healersTest/ClericTest.class
+enemiesTest/EnemyTest.class
+playersTest/fightersTest/BarbarianTest.class
+playersTest/magicUsersTest/WizardTest.class
+itemsTest/SpellTest.class
+itemsTest/CreatureTest.class

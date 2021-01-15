@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Healer.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">w12_d4_Fantasy_Adventure</a> &gt; <a href="index.source.html" class="el_package">player.healer</a> &gt; <span class="el_source">Healer.java</span></div><h1>Healer.java</h1><pre class="source lang-java linenums">package player.healer;
+
+import items.HealingTool;
+
+public abstract class Healer extends player.Player {
+
+    private HealingTool equippedHealingTool;
+
+    public Healer(String name, int healthPoints) {
+<span class="fc" id="L10">        super(name, healthPoints);</span>
+<span class="fc" id="L11">        this.equippedHealingTool = null;</span>
+<span class="fc" id="L12">    }</span>
+
+    @Override
+    public String getName() {
+<span class="fc" id="L16">        return super.getName();</span>
+    }
+
+    @Override
+    public int getHealthPoints() {
+<span class="fc" id="L21">        return super.getHealthPoints();</span>
+    }
+
+    public void setEquippedHealingTools(HealingTool equippedHealingTool) {
+<span class="nc" id="L25">        this.equippedHealingTool = equippedHealingTool;</span>
+<span class="nc" id="L26">    }</span>
+
+    @Override
+    public void heal(int pointsToHeal) {
+<span class="nc" id="L30">        super.heal(pointsToHeal);</span>
+<span class="nc" id="L31">    }</span>
+
+    public void changeHealingTool(HealingTool newHealingTool) {
+<span class="nc bnc" id="L34" title="All 2 branches missed.">        if (equippedHealingTool != null) {</span>
+<span class="nc" id="L35">            addToInventory(equippedHealingTool);</span>
+
+<span class="nc bnc" id="L37" title="All 2 branches missed.">            if (getInventory().contains(newHealingTool)) {</span>
+<span class="nc" id="L38">                removeFromInventory(newHealingTool);</span>
+<span class="nc" id="L39">                equippedHealingTool = newHealingTool;</span>
+            }
+        }
+<span class="nc" id="L42">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
