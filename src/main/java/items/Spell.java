@@ -4,9 +4,9 @@ public class Spell extends Item {
 
     private int damage;
 
-    public Spell(String name, int value, boolean consumable, int damage){
-        super(name, value, consumable);
-        this.damage = damage;
+    public Spell(SpellType spell){
+        super(spell.getName(), spell.getValue(), , spell.isConsumable()););
+        this.damage = spell.getDamage();
     }
 
     public int getDamage() {

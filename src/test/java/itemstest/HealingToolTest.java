@@ -1,6 +1,7 @@
 package itemstest;
 
 import items.HealingTool;
+import items.HealingToolType;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,11 +13,11 @@ public class HealingToolTest {
 
     @Before
     public void before(){
-        healingTool = new HealingTool("potion", 20, true, 20);
+        healingTool = new HealingTool(HealingToolType.POTION);
     }
 
     @Test
-    public void canHaveHealthPoints(){
-        assertEquals(20, healingTool.getHealingAmount());
+    public void canGetHealingAmount(){
+        assertEquals(10, healingTool.getHealingAmount());
     }
 }

@@ -1,6 +1,7 @@
 package playertest.fightertest;
 
 import enemies.Enemy;
+import enemies.EnemyType;
 import items.Weapon;
 import player.fighter.Dwarf;
 import org.junit.Before;
@@ -16,9 +17,10 @@ public class DwarfTest {
     private Enemy orc;
 
     @Before
-    public void before(){ thorin = new Dwarf("Thorin", 200);
-    orc = new Enemy("Orky", 50, 100);
-    axe = new Weapon("Axe", 25, false,60);
+    public void before(){
+        thorin = new Dwarf("Thorin", 200);
+        orc = new Enemy("Orcy", EnemyType.ORC);
+        axe = new Weapon("Axe", 25, false,25);
     }
 
     @Test
@@ -36,6 +38,6 @@ public class DwarfTest {
         thorin.addToInventory(axe);
         thorin.changeWeapons(axe);
         thorin.attack(thorin.getEquippedWeapon(), orc);
-        assertEquals(40, orc.getHealthPoints());
+        assertEquals(20, orc.getHealthPoints());
     }
 }

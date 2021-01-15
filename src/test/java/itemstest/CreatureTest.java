@@ -1,6 +1,7 @@
 package itemstest;
 
 import items.Creature;
+import items.CreatureType;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -14,12 +15,12 @@ public class CreatureTest {
 
     @Before
     public void before(){
-        creature = new Creature("Iglu", 80, false, 15);
+        creature = new Creature(CreatureType.CAT);
     }
 
     @Test
     public void canGetCreatureName(){
-        assertEquals("Iglu", creature.getName());
+        assertEquals("Cat", creature.getName());
     }
 
     @Test
@@ -29,7 +30,7 @@ public class CreatureTest {
 
     @Test
     public void canGetValue() {
-        assertEquals(80, creature.getValue());
+        assertEquals(25, creature.getValue());
     }
 
     @Test

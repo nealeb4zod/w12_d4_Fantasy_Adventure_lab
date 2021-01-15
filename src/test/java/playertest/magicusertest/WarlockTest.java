@@ -1,6 +1,7 @@
 package playertest.magicusertest;
 
 import enemies.Enemy;
+import enemies.EnemyType;
 import items.Spell;
 import org.junit.Before;
 import org.junit.Test;
@@ -18,7 +19,7 @@ public class WarlockTest {
     @Before
     public void before() {
         voldy = new Warlock("Voldemort", 3000);
-        orc = new Enemy("Orky", 50, 100);
+        orc = new Enemy("Orcy", EnemyType.ORC);
         leviosa = new Spell("Leviosa", 20, false,10);
     }
 
@@ -37,6 +38,6 @@ public class WarlockTest {
         voldy.addToInventory(leviosa);
         voldy.changeSpells(leviosa);
         voldy.castSpell(voldy.getEquippedSpell(), orc);
-        assertEquals(90, orc.getHealthPoints());
+        assertEquals(35, orc.getHealthPoints());
     }
 }

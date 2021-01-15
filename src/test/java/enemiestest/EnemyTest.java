@@ -1,6 +1,7 @@
 package enemiestest;
 
 import enemies.Enemy;
+import enemies.EnemyType;
 import org.junit.Before;
 import org.junit.Test;
 import player.fighter.Barbarian;
@@ -12,13 +13,13 @@ public class EnemyTest {
 
     private Enemy orc;
     private Barbarian conan;
-    private Enemy bigorc;
+    private Enemy troll;
 
     @Before
     public void before() {
-        orc = new Enemy("Orcy", 5, 15);
+        orc = new Enemy("Orcy", EnemyType.ORC);
         conan = new Barbarian("Conan", 25);
-        bigorc =  new Enemy("Big Orcy",40, 45);
+        troll =  new Enemy("Trolly",EnemyType.TROLL);
     }
 
     @Test
@@ -28,29 +29,29 @@ public class EnemyTest {
 
     @Test
     public void canGetDamage() {
-        assertEquals(5, orc.getDamage());
+        assertEquals(15, orc.getDamage());
     }
 
     @Test
     public void canGetHealthPoints() {
-        assertEquals(15, orc.getHealthPoints());
+        assertEquals(45, orc.getHealthPoints());
     }
 
     @Test
     public void canTakeDamage() {
         orc.takeDamage(5);
-        assertEquals(10, orc.getHealthPoints());
+        assertEquals(40, orc.getHealthPoints());
     }
 
     @Test
     public void canAttackPlayer() {
         orc.attack(conan);
-        assertEquals(20, conan.getHealthPoints());
+        assertEquals(10, conan.getHealthPoints());
     }
 
     @Test
     public void noNegativeHealth() {
-        bigorc.attack(conan);
+        troll.attack(conan);
         assertEquals(0, conan.getHealthPoints());
     }
 }
