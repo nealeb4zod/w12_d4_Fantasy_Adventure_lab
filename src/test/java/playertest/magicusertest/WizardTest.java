@@ -1,14 +1,14 @@
-package playersTest.magicUsersTest;
+package playertest.magicusertest;
 
 import org.junit.Before;
 import org.junit.Test;
-import player.magicUser.Wizard;
+import player.magicuser.Wizard;
 
 import static org.junit.Assert.assertEquals;
 
 public class WizardTest {
 
-    Wizard merlin;
+    private Wizard merlin;
 
     @Before
     public void before(){ merlin = new Wizard("Merlin", 85); }

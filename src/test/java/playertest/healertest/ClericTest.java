@@ -1,4 +1,4 @@
-package playersTest.healersTest;
+package playertest.healertest;
 
 import player.healer.Cleric;
 import org.junit.Before;
@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 
 public class ClericTest {
 
-        Cleric healer;
+        private Cleric healer;
 
         @Before
         public void before() {

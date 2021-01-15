@@ -1,4 +1,4 @@
-package player.magicUser;
+package player.magicuser;
 
 import enemies.Enemy;
 import items.Creature;

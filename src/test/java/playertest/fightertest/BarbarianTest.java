@@ -1,4 +1,4 @@
-package playersTest.fightersTest;
+package playertest.fightertest;
 
 import player.fighter.Barbarian;
 import org.junit.Before;
@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 
 public class BarbarianTest {
 
-    Barbarian conan;
+    private Barbarian conan;
 
     @Before
     public void before(){
@@ -55,4 +55,6 @@ public class BarbarianTest {
         conan.heal(15);
         assertEquals(100, conan.getHealthPoints());
     }
+
+
 }

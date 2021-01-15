@@ -1,15 +1,16 @@
-package itemsTest;
+package itemstest;
 
 import items.Creature;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 
 public class CreatureTest {
 
-    Creature creature;
+    private Creature creature;
 
     @Before
     public void before(){
@@ -29,6 +30,11 @@ public class CreatureTest {
     @Test
     public void canGetValue() {
         assertEquals(80, creature.getValue());
+    }
+
+    @Test
+    public void canGetConsumable() {
+        assertFalse(creature.isConsumable());
     }
 
 

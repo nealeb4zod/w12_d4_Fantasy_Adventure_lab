@@ -1,4 +1,4 @@
-package itemsTest;
+package itemstest;
 
 import items.Weapon;
 import org.junit.Before;
@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 
 public class WeaponTest {
 
-    Weapon weapon;
+    private Weapon weapon;
 
     @Before
     public void before(){

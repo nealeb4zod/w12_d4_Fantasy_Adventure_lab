@@ -1,4 +1,4 @@
-package player.magicUser;
+package player.magicuser;
 
 public class Wizard extends MagicUser {
 

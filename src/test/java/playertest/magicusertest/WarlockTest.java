@@ -1,19 +1,19 @@
-package playersTest.magicUsersTest;
+package playertest.magicusertest;
 
 import enemies.Enemy;
 import items.Spell;
 import org.junit.Before;
 import org.junit.Test;
-import player.magicUser.Warlock;
+import player.magicuser.Warlock;
 
 import static org.junit.Assert.assertEquals;
 
 
 public class WarlockTest {
 
-    Warlock voldy;
-    Enemy orc;
-    Spell leviosa;
+    private Warlock voldy;
+    private Enemy orc;
+    private Spell leviosa;
 
     @Before
     public void before() {

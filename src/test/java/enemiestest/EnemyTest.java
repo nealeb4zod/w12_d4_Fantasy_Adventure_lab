@@ -1,4 +1,4 @@
-package enemiesTest;
+package enemiestest;
 
 import enemies.Enemy;
 import org.junit.Before;
@@ -10,13 +10,15 @@ import static org.junit.Assert.assertEquals;
 
 public class EnemyTest {
 
-    Enemy orc;
-    Barbarian conan;
+    private Enemy orc;
+    private Barbarian conan;
+    private Enemy bigorc;
 
     @Before
     public void before() {
         orc = new Enemy("Orcy", 5, 15);
         conan = new Barbarian("Conan", 25);
+        bigorc =  new Enemy("Big Orcy",40, 45);
     }
 
     @Test
@@ -44,5 +46,11 @@ public class EnemyTest {
     public void canAttackPlayer() {
         orc.attack(conan);
         assertEquals(20, conan.getHealthPoints());
+    }
+
+    @Test
+    public void noNegativeHealth() {
+        bigorc.attack(conan);
+        assertEquals(0, conan.getHealthPoints());
     }
 }

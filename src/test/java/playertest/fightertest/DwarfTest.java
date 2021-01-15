@@ -1,4 +1,4 @@
-package playersTest.fightersTest;
+package playertest.fightertest;
 
 import enemies.Enemy;
 import items.Weapon;
@@ -11,9 +11,9 @@ import static org.junit.Assert.assertEquals;
 
 public class DwarfTest {
 
-    Weapon axe;
-    Dwarf thorin;
-    Enemy orc;
+    private Weapon axe;
+    private Dwarf thorin;
+    private Enemy orc;
 
     @Before
     public void before(){ thorin = new Dwarf("Thorin", 200);

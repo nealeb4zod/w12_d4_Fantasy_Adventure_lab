@@ -14,6 +14,6 @@ w12_d4_Fantasy_Adventure,items,Spell,0,12,0,0,0,4,0,2,0,2
 w12_d4_Fantasy_Adventure,items,HealingTool,0,15,0,0,0,5,0,2,0,2
 w12_d4_Fantasy_Adventure,items,Weapon,0,12,0,0,0,4,0,2,0,2
 w12_d4_Fantasy_Adventure,items,Treasure,0,6,0,0,0,2,0,1,0,1
-w12_d4_Fantasy_Adventure,items,Item,3,18,0,0,1,7,1,3,1,3
+w12_d4_Fantasy_Adventure,items,Item,0,21,0,0,0,8,0,4,0,4
 w12_d4_Fantasy_Adventure,items,Creature,0,12,0,0,0,4,0,2,0,2
 w12_d4_Fantasy_Adventure,player,Player,18,86,0,4,6,25,4,11,4,9

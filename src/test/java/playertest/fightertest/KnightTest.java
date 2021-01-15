@@ -1,4 +1,4 @@
-package playersTest.fightersTest;
+package playertest.fightertest;
 
 import player.fighter.Knight;
 import org.junit.Before;
@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 
 public class KnightTest {
 
-    Knight sirGalahad;
+    private Knight sirGalahad;
 
     @Before
     public void before() {sirGalahad = new Knight("Sir Galahad", 150); }

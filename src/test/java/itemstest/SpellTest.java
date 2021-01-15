@@ -1,4 +1,4 @@
-package itemsTest;
+package itemstest;
 
 import items.Spell;
 import org.junit.Before;
@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 
 public class SpellTest {
 
-    Spell spell;
+    private Spell spell;
 
     @Before
     public void before(){ spell = new Spell("Leviosa", 20, false,10); }

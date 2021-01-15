@@ -1,4 +1,4 @@
-package itemsTest;
+package itemstest;
 
 import items.HealingTool;
 import org.junit.Before;
@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 
 public class HealingToolTest {
 
-    HealingTool healingTool;
+    private HealingTool healingTool;
 
     @Before
     public void before(){
