@@ -19,7 +19,7 @@ public class DwarfTest {
     @Before
     public void before(){
         thorin = new Dwarf("Thorin", 200);
-        orc = new Enemy("Orcy", EnemyType.ORC);
+        orc = new Enemy(EnemyType.ORC);
         axe = new Weapon("Axe", 25, false,25);
     }
 

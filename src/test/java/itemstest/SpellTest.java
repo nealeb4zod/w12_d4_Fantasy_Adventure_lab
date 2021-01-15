@@ -12,7 +12,7 @@ public class SpellTest {
     private Spell spell;
 
     @Before
-    public void before(){ spell = new Spell(SpellType.DEATHBYCOCKROACH; }
+    public void before(){ spell = new Spell(SpellType.DEATHBYCOCKROACH); }
 
     @Test
     public void canGetDamage(){

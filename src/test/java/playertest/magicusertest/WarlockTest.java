@@ -3,6 +3,7 @@ package playertest.magicusertest;
 import enemies.Enemy;
 import enemies.EnemyType;
 import items.Spell;
+import items.SpellType;
 import org.junit.Before;
 import org.junit.Test;
 import player.magicuser.Warlock;
@@ -12,32 +13,32 @@ import static org.junit.Assert.assertEquals;
 
 public class WarlockTest {
 
-    private Warlock voldy;
-    private Enemy orc;
-    private Spell leviosa;
+    private Warlock warlock;
+    private Enemy enemy;
+    private Spell spell;
 
     @Before
     public void before() {
-        voldy = new Warlock("Voldemort", 3000);
-        orc = new Enemy("Orcy", EnemyType.ORC);
-        leviosa = new Spell("Leviosa", 20, false,10);
+        warlock = new Warlock("Voldemort", 3000);
+        enemy = new Enemy(EnemyType.TROLL);
+        spell = new Spell(SpellType.FIREBALL);
     }
 
     @Test
     public void canGetName(){
-        assertEquals("Voldemort", voldy.getName());
+        assertEquals("Voldemort", warlock.getName());
     }
 
     @Test
     public void canGetHealthPoints(){
-        assertEquals(3000, voldy.getHealthPoints());
+        assertEquals(3000, warlock.getHealthPoints());
     }
 
     @Test
     public void canCastSpell() {
-        voldy.addToInventory(leviosa);
-        voldy.changeSpells(leviosa);
-        voldy.castSpell(voldy.getEquippedSpell(), orc);
-        assertEquals(35, orc.getHealthPoints());
+        warlock.addToInventory(spell);
+        warlock.changeSpells(spell);
+        warlock.castSpell(warlock.getEquippedSpell(), enemy);
+        assertEquals(0, enemy.getHealthPoints());
     }
 }

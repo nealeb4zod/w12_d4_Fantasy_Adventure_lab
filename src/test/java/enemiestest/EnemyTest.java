@@ -17,14 +17,14 @@ public class EnemyTest {
 
     @Before
     public void before() {
-        orc = new Enemy("Orcy", EnemyType.ORC);
+        orc = new Enemy(EnemyType.ORC);
         conan = new Barbarian("Conan", 25);
-        troll =  new Enemy("Trolly",EnemyType.TROLL);
+        troll =  new Enemy(EnemyType.TROLL);
     }
 
     @Test
     public void canGetName() {
-        assertEquals("Orcy", orc.getName());
+        assertEquals(EnemyType.TROLL, troll.getType());
     }
 
     @Test

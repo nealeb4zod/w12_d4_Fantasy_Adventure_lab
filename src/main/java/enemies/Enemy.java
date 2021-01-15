@@ -4,19 +4,14 @@ import player.Player;
 
 public class Enemy {
 
-    private String name;
     private EnemyType type;
     private int damage;
     private int healthPoints;
 
-    public Enemy(String name, EnemyType type){
-        this.name = name;
+    public Enemy(EnemyType type){
+        this.type = type;
         this.damage = type.getDamage();
         this.healthPoints = type.getHealthPoints();
-    }
-
-    public String getName() {
-        return name;
     }
 
     public int getDamage() {
@@ -37,5 +32,9 @@ public class Enemy {
 
     public void attack(Player player) {
         player.takeDamage(damage);
+    }
+
+    public EnemyType getType() {
+        return type;
     }
 }
