@@ -1,12 +1,12 @@
 package items;
 
-public class Creature extends ItemType{
+public class Creature extends Item {
 
-    private String name;
+
     private int defence;
 
-    public Creature(String name, int defence){
-        super(name);
+    public Creature(String name, int value, boolean consumable, int defence) {
+        super(name, value, consumable);
         this.defence = defence;
     }
 

@@ -1,15 +1,9 @@
 package items;
 
-public class Treasure extends ItemType {
+public class Treasure extends Item {
 
-    private int defence;
-
-    public Treasure(String name, int defence){
-        super(name);
-        this.defence = defence;
+    public Treasure(String name, int value, boolean consumable){
+        super(name, value, consumable);
     }
 
-    public int getDefence() {
-        return defence;
-    }
 }

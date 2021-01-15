@@ -19,7 +19,7 @@ public class WarlockTest {
     public void before() {
         voldy = new Warlock("Voldemort", 3000);
         orc = new Enemy("Orky", 50, 100);
-        leviosa = new Spell("Leviosa", 10);
+        leviosa = new Spell("Leviosa", 20, false,10);
     }
 
     @Test
@@ -34,6 +34,7 @@ public class WarlockTest {
 
     @Test
     public void canCastSpell() {
+        voldy.addToInventory(leviosa);
         voldy.changeSpells(leviosa);
         voldy.castSpell(voldy.getEquippedSpell(), orc);
         assertEquals(90, orc.getHealthPoints());

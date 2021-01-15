@@ -11,7 +11,7 @@ public class SpellTest {
     Spell spell;
 
     @Before
-    public void before(){ spell = new Spell("Leviosa", 10); }
+    public void before(){ spell = new Spell("Leviosa", 20, false,10); }
 
     @Test
     public void canGetDamage(){

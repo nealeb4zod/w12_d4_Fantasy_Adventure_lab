@@ -13,7 +13,7 @@ public class CreatureTest {
 
     @Before
     public void before(){
-        creature = new Creature("Iglu", 80);
+        creature = new Creature("Iglu", 80, false, 15);
     }
 
     @Test
@@ -23,7 +23,12 @@ public class CreatureTest {
 
     @Test
     public void canGetCreatureDefence(){
-        assertEquals(80, creature.getDefence());
+        assertEquals(15, creature.getDefence());
+    }
+
+    @Test
+    public void canGetValue() {
+        assertEquals(80, creature.getValue());
     }
 
 

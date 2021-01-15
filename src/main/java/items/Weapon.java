@@ -1,10 +1,10 @@
 package items;
 
-public class Spell extends Item {
+public class Weapon extends Item {
 
     private int damage;
 
-    public Spell(String name, int value, boolean consumable, int damage){
+    public Weapon(String name, int value, boolean consumable,int damage){
         super(name, value, consumable);
         this.damage = damage;
     }

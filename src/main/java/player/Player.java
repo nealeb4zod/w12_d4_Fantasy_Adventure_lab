@@ -1,6 +1,7 @@
 package player;
 
-import items.ItemType;
+import items.Item;
+import items.Treasure;
 
 import java.util.ArrayList;
 
@@ -9,13 +10,17 @@ public abstract class Player {
     private final String name;
     private final int maxHealthPoints;
     private int healthPoints;
-    private ArrayList<ItemType> inventory;
+    private ArrayList<Item> inventory;
+    private ArrayList<Treasure> purse;
+    private boolean alive;
 
     public Player(String name, int healthPoints) {
         this.name = name;
         this.maxHealthPoints = healthPoints;
         this.healthPoints = healthPoints;
-        this.inventory = new ArrayList<ItemType>();
+        this.inventory = new ArrayList<Item>();
+        this.purse = new ArrayList<Treasure>();
+        this.alive = true;
     }
 
     public String getName() {
@@ -26,17 +31,28 @@ public abstract class Player {
         return healthPoints;
     }
 
-    public ArrayList<ItemType> getInventory() {
+    public ArrayList<Item> getInventory() {
         return inventory;
     }
 
-    // The method formerly known as collect
-    public void addToInventory(ItemType item) {
+    public void addToInventory(Item item) {
         inventory.add(item);
     }
 
-    public void removeFromInventory(ItemType item) {
+    public void removeFromInventory(Item item) {
         inventory.remove(item);
+    }
+
+    public ArrayList<Treasure> getPurse() {
+        return purse;
+    }
+
+    public void addToPurse(Treasure treasure) {
+        purse.add(treasure);
+    }
+
+    public void removeFromPurse(Treasure treasure) {
+        purse.remove(treasure);
     }
 
     public void takeDamage(int damageAmount) {
@@ -44,6 +60,7 @@ public abstract class Player {
             this.healthPoints -= damageAmount;
         } else {
             this.healthPoints = 0;
+            this.alive = false;
         }
     }
 
@@ -58,5 +75,9 @@ public abstract class Player {
         else {
             healthPoints += pointsToHeal;
         }
+    }
+
+    public boolean isAlive() {
+        return alive;
     }
 }

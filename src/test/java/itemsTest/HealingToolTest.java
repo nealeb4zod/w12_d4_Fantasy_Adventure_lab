@@ -12,11 +12,11 @@ public class HealingToolTest {
 
     @Before
     public void before(){
-        healingTool = new HealingTool("test", 20);
+        healingTool = new HealingTool("potion", 20, true, 20);
     }
 
     @Test
     public void canHaveHealthPoints(){
-        assertEquals(20, healingTool.getHealthPoints());
+        assertEquals(20, healingTool.getHealingAmount());
     }
 }

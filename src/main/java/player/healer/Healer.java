@@ -1,13 +1,12 @@
 package player.healer;
 
 import items.HealingTool;
-import items.Weapons;
 
-public abstract class HealerType extends player.Player {
+public abstract class Healer extends player.Player {
 
     private HealingTool equippedHealingTool;
 
-    public HealerType(String name, int healthPoints) {
+    public Healer(String name, int healthPoints) {
         super(name, healthPoints);
         this.equippedHealingTool = null;
     }

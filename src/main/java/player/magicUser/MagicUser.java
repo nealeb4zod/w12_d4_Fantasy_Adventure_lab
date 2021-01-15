@@ -4,12 +4,15 @@ import enemies.Enemy;
 import items.Creature;
 import items.Spell;
 
-public abstract class MagicUserType extends player.Player {
+import java.util.ArrayList;
+
+public abstract class MagicUser extends player.Player {
 
     private Spell equippedSpell;
     private Creature equippedCreature;
+    private ArrayList<Spell> spellBook;
 
-    public MagicUserType(String name, int healthPoints) {
+    public MagicUser(String name, int healthPoints) {
         super(name, healthPoints);
         this.equippedSpell = null;
         this.equippedCreature = null;

@@ -14,12 +14,9 @@ public class TreasureTest {
 
     @Before
 
-    public void before(){ myPrecious = new Treasure("My Precious", 1000); }
+    public void before(){ myPrecious = new Treasure("My Precious", 100,true); }
 
-    @Test
-    public void canGetDefence(){
-        assertEquals(1000, myPrecious.getDefence());
-    }
+
 
     @Test
     public void canGetName(){
