@@ -1,5 +1,6 @@
 package playertest.fightertest;
 
+import player.fighter.FighterType;
 import player.fighter.Knight;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,16 +12,8 @@ public class KnightTest {
     private Knight sirGalahad;
 
     @Before
-    public void before() {sirGalahad = new Knight("Sir Galahad", 150); }
+    public void before() {sirGalahad = new Knight("Sir Galahad", FighterType.KNIGHT); }
 
-    @Test
-    public void hasName(){
-        assertEquals("Sir Galahad", sirGalahad.getName());
-    }
 
-    @Test
-    public void hasHealthPoints(){
-        assertEquals(150, sirGalahad.getHealthPoints());
-    }
 }
 

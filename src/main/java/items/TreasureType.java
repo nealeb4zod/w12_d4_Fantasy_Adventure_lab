@@ -1,20 +1,20 @@
 package items;
 
-public enum CreatureType {
-    CAT("Cat", 25, false, 15),
-    BAT("Bat", 25, false, 15),
-    ;
+public enum TreasureType {
 
+    BAGOFGOLD(1,"Gold Coins",25, true),
+    BAGOFGEMS(2,"Gemstones", 50, true);
+
+    private final int index;
     private final String name;
     private final int value;
     private final boolean consumable;
-    private final int defence;
 
-    CreatureType (String name, int value, boolean consumable, int defence) {
+    TreasureType(int index, String name, int value, boolean consumable) {
+        this.index = index;
         this.name = name;
         this.value = value;
         this.consumable = consumable;
-        this.defence = defence;
     }
 
     public String getName() {
@@ -29,7 +29,8 @@ public enum CreatureType {
         return consumable;
     }
 
-    public int getDefence() {
-        return defence;
+    public int getIndex() {
+        return index;
     }
 }
+

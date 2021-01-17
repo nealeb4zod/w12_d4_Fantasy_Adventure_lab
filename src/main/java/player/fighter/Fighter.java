@@ -1,30 +1,16 @@
 package player.fighter;
 
 import enemies.Enemy;
-import items.Weapon;
+import items.Offense;
+import items.OffenseType;
 
 public abstract class Fighter extends player.Player {
 
-    private Weapon equippedWeapon;
-
-    public Fighter(String name, int healthPoints) {
-        super(name, healthPoints);
-        this.equippedWeapon = null;
+    public Fighter(String name, FighterType fighterType) {
+        super(name, fighterType.getType(), fighterType.getHealthPoints(), fighterType.getAttackBonus(), fighterType.getDefenseBonus(), fighterType.getSpellBonus(), fighterType.getHealBonus());
+        Offense weapon = new Offense(fighterType.getOffenseType(), 0);
+        addToInventory(weapon);
+        changeOffense(weapon);
     }
-
-    public Weapon getEquippedWeapon(){ return equippedWeapon ; }
-
-    public void attack(Weapon weapon, Enemy enemy) { enemy.takeDamage(weapon.getDamage()); }
-
-    public void changeWeapons( Weapon newWeapon) {
-        if (equippedWeapon != null){
-            addToInventory(equippedWeapon);
-        }
-        if (getInventory().contains(newWeapon)){
-            removeFromInventory(newWeapon);
-            equippedWeapon = newWeapon;
-        }
-    }
-
 
 }

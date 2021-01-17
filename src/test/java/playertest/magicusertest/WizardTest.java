@@ -2,6 +2,7 @@ package playertest.magicusertest;
 
 import org.junit.Before;
 import org.junit.Test;
+import player.magicuser.MagicUserType;
 import player.magicuser.Wizard;
 
 import static org.junit.Assert.assertEquals;
@@ -11,7 +12,7 @@ public class WizardTest {
     private Wizard merlin;
 
     @Before
-    public void before(){ merlin = new Wizard("Merlin", 85); }
+    public void before(){ merlin = new Wizard("Merlin", MagicUserType.WIZARD); }
 
     @Test
     public void canGetName(){
@@ -20,6 +21,6 @@ public class WizardTest {
 
     @Test
     public void canGetHealthPoints(){
-        assertEquals(85, merlin.getHealthPoints());
+        assertEquals(40, merlin.getHealthPoints());
     }
 }

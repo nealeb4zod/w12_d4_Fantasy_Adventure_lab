@@ -1,20 +1,22 @@
 package items;
 
-public enum CreatureType {
-    CAT("Cat", 25, false, 15),
-    BAT("Bat", 25, false, 15),
-    ;
+public enum DefenseType {
+
+    SHIELD("Shield", 20, false, 20),
+    LEATHERARMOUR("Leather Armour", 10, false, 10),
+    CHAINMAILARMOUR("Chainmail Armour", 20, false, 20);
 
     private final String name;
     private final int value;
     private final boolean consumable;
-    private final int defence;
+    private final int defense;
 
-    CreatureType (String name, int value, boolean consumable, int defence) {
+
+    DefenseType(String name, int value, boolean consumable, int defense) {
         this.name = name;
         this.value = value;
         this.consumable = consumable;
-        this.defence = defence;
+        this.defense = defense;
     }
 
     public String getName() {
@@ -29,7 +31,7 @@ public enum CreatureType {
         return consumable;
     }
 
-    public int getDefence() {
-        return defence;
+    public int getDefense() {
+        return defense;
     }
 }

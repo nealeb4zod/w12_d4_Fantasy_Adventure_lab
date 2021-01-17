@@ -2,42 +2,28 @@ package playertest.fightertest;
 
 import enemies.Enemy;
 import enemies.EnemyType;
-import items.Weapon;
+import items.Offense;
+import items.OffenseType;
 import player.fighter.Dwarf;
 import org.junit.Before;
 import org.junit.Test;
+import player.fighter.FighterType;
 
 import static org.junit.Assert.assertEquals;
 
 
 public class DwarfTest {
 
-    private Weapon axe;
+    private Offense axe;
     private Dwarf thorin;
     private Enemy orc;
 
     @Before
     public void before(){
-        thorin = new Dwarf("Thorin", 200);
+        thorin = new Dwarf("Thorin", FighterType.DWARF);
         orc = new Enemy(EnemyType.ORC);
-        axe = new Weapon("Axe", 25, false,25);
+        axe = new Offense(OffenseType.AXE, 15);
     }
 
-    @Test
-    public void hasName(){
-        assertEquals("Thorin", thorin.getName());
-    }
 
-    @Test
-    public void hasHealthPoints(){
-        assertEquals(200, thorin.getHealthPoints());
-    }
-
-    @Test
-    public void canAttack(){
-        thorin.addToInventory(axe);
-        thorin.changeWeapons(axe);
-        thorin.attack(thorin.getEquippedWeapon(), orc);
-        assertEquals(20, orc.getHealthPoints());
-    }
 }

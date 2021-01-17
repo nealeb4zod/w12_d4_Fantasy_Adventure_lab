@@ -1,43 +1,20 @@
 package player.healer;
 
+
 import items.HealingTool;
+import items.Offense;
 
 public abstract class Healer extends player.Player {
 
-    private HealingTool equippedHealingTool;
-
-    public Healer(String name, int healthPoints) {
-        super(name, healthPoints);
-        this.equippedHealingTool = null;
-    }
-
-    @Override
-    public String getName() {
-        return super.getName();
-    }
-
-    @Override
-    public int getHealthPoints() {
-        return super.getHealthPoints();
-    }
-
-    public void setEquippedHealingTools(HealingTool equippedHealingTool) {
-        this.equippedHealingTool = equippedHealingTool;
-    }
-
-    @Override
-    public void heal(int pointsToHeal) {
-        super.heal(pointsToHeal);
-    }
-
-    public void changeHealingTool(HealingTool newHealingTool) {
-        if (equippedHealingTool != null) {
-            addToInventory(equippedHealingTool);
-
-            if (getInventory().contains(newHealingTool)) {
-                removeFromInventory(newHealingTool);
-                equippedHealingTool = newHealingTool;
-            }
+    public Healer(String name, HealerType healerType) {
+        super(name, healerType.getType(), healerType.getHealthPoints(), healerType.getAttackBonus(), healerType.getDefenseBonus(), healerType.getSpellBonus(), healerType.getHealBonus());
+        Offense weapon = new Offense(healerType.getOffenseType(), 0);
+        addToInventory(weapon);
+        changeOffense(weapon);
+        HealingTool healingTool = new HealingTool(healerType.getHealingToolType());
+        for (int i = 0; i < healerType.getHealingToolQuantity(); i++){
+            addToInventory(healingTool);
         }
     }
+
 }

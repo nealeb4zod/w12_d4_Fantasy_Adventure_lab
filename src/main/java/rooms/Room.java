@@ -1,25 +1,37 @@
 package rooms;
 
 import enemies.Enemy;
+import items.Item;
 import items.Treasure;
+
+import java.util.ArrayList;
 
 public class Room {
 
-    private Treasure treasure;
-    private Enemy enemy;
+    private ArrayList<Item> treasureChest;
+    private ArrayList<Enemy> enemies;
 
-    public Room (Treasure treasure, Enemy enemy) {
-        this.treasure = treasure;
-        this.enemy = enemy;
+    public Room () {
+        this.treasureChest = new ArrayList<>();
+        this.enemies = new ArrayList<>();
     }
 
-    public Treasure getTreasure() {
-        return treasure;
+    public ArrayList<Item> getTreasureChest() {
+        return treasureChest;
     }
 
-    public Enemy getEnemy() {
-        return enemy;
+    public ArrayList<Enemy> getEnemies() {
+        return enemies;
     }
 
+    public void addToTreasureChest(Item item) {
+        treasureChest.add(item);
+    }
+
+    public void removeFromTreasureChest(Item item) {
+        treasureChest.remove(item);
+    }
+
+    public void addEnemy (Enemy enemy) {enemies.add(enemy);}
 
 }

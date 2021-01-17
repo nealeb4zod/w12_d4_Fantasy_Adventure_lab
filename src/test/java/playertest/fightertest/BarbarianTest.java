@@ -1,18 +1,23 @@
 package playertest.fightertest;
 
+import enemies.Enemy;
+import enemies.EnemyType;
 import player.fighter.Barbarian;
 import org.junit.Before;
 import org.junit.Test;
+import player.fighter.FighterType;
 
 import static org.junit.Assert.assertEquals;
 
 public class BarbarianTest {
 
     private Barbarian conan;
+    private Enemy troll;
 
     @Before
     public void before(){
-        conan = new Barbarian("Conan", 100);
+        conan = new Barbarian("Conan", FighterType.BARBARIAN);
+        troll = new Enemy(EnemyType.TROLL);
     }
 
     @Test
@@ -22,18 +27,18 @@ public class BarbarianTest {
 
     @Test
     public void hasHealthPoints(){
-        assertEquals(100, conan.getHealthPoints());
+        assertEquals(70, conan.getHealthPoints());
     }
 
     @Test
     public void canGetMaxHealth() {
-        assertEquals(100, conan.getMaxHealthPoints());
+        assertEquals(70, conan.getMaxHealthPoints());
     }
 
     @Test
     public void canTakeDamage() {
         conan.takeDamage(20);
-        assertEquals(80, conan.getHealthPoints());
+        assertEquals(50, conan.getHealthPoints());
     }
 
     @Test
@@ -46,15 +51,13 @@ public class BarbarianTest {
     public void canHeal() {
         conan.takeDamage(10);
         conan.heal(5);
-        assertEquals(95, conan.getHealthPoints());
+        assertEquals(65, conan.getHealthPoints());
     }
 
     @Test
     public void noOverHealing() {
         conan.takeDamage(10);
         conan.heal(15);
-        assertEquals(100, conan.getHealthPoints());
+        assertEquals(70, conan.getHealthPoints());
     }
-
-
 }

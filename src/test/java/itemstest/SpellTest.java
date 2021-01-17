@@ -10,17 +10,22 @@ import static org.junit.Assert.assertEquals;
 public class SpellTest {
 
     private Spell spell;
+    private Spell modifiedSpell;
 
     @Before
-    public void before(){ spell = new Spell(SpellType.DEATHBYCOCKROACH); }
+    public void before() {
+        spell = new Spell(SpellType.DEATHBYCOCKROACH, 0);
+        modifiedSpell = new Spell(SpellType.FIREBALL, 10);
+    }
 
     @Test
-    public void canGetDamage(){
+    public void canGetDamage() {
         assertEquals(90, spell.getDamage());
     }
 
     @Test
-    public void canGetName(){
-        assertEquals("Death by Cockroach", spell.getName());
+    public void canGetTotalDamage() {
+        assertEquals(25, modifiedSpell.getTotalDamage());
     }
+
 }

@@ -15,7 +15,7 @@ public class CreatureTest {
 
     @Before
     public void before(){
-        creature = new Creature(CreatureType.CAT);
+        creature = new Creature(CreatureType.CAT, 0);
     }
 
     @Test

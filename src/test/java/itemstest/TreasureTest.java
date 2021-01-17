@@ -1,6 +1,7 @@
 package itemstest;
 
 import items.Treasure;
+import items.TreasureType;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -13,10 +14,6 @@ public class TreasureTest {
     private Treasure myPrecious;
 
     @Before
-    public void before(){ myPrecious = new Treasure("My Precious", 100,true); }
+    public void before(){ myPrecious = new Treasure(TreasureType.BAGOFGOLD); }
 
-    @Test
-    public void canGetName(){
-        assertEquals("My Precious", myPrecious.getName());
-    }
 }
