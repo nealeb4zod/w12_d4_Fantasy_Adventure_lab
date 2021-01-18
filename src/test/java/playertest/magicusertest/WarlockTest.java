@@ -25,10 +25,9 @@ public class WarlockTest {
         fireball = new Spell(SpellType.FIREBALL, 0);
     }
 
-
     @Test
     public void canCastSpell() {
         warlock.castSpell(fireball, enemy);
-        assertEquals(75, enemy.getHealthPoints());
+        assertEquals(55, enemy.getHealthPoints());
     }
 }

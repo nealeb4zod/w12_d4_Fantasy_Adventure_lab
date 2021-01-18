@@ -2,6 +2,7 @@ package items;
 
 import behaviours.IAttack;
 
+
 public class Spell extends Item implements IAttack {
 
     private int damage;
@@ -24,4 +25,17 @@ public class Spell extends Item implements IAttack {
     public int getTotalDamage() {
         return damage + damageModifier;
     }
+
+    @Override
+    public boolean equals(Object o) {
+
+        if (o == this) return true;
+        if (!(o instanceof Spell)) {
+            return false;
+        }
+        Spell spell = (Spell) o;
+        return getName().equals(spell.getName());
+
+    }
+
 }
